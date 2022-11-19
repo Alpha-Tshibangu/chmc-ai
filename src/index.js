@@ -1,18 +1,21 @@
-url = "https://jsonplaceholder.typicode.com/todos/1";
+function query() {
+  var input = document.getElementById("userInput").value;
+  return input
+}
 
-var query = document.getElementById("userInput").value;
-
-const serverUrl =
-  "http://127.0.0.1:8000/fees?" +
+const url =
+  "http://127.0.0.1:8000/price?" +
   new URLSearchParams({
-    q: query,
+    q: query(),
   });
 
-fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
-    document.getElementById("answer").innerText = data["title"];
-  })
-  .catch((error) => console.log(error));
+function getPrice() {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("answer").innerText = data["answer"];
+    })
+    .catch((error) => console.log(error));
+}
 
-var query = document.getElementById("userInput").value;
+

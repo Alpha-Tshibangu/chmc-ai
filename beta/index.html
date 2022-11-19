@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Chisholm Medical Centre AI</title>
+</head>
+<body>
+    <div class="container">
+        <div class="links">
+            <a target=”_blank” style="text-decoration: none;" href="https://www.chisholmmedicalcentre.com.au/index.php">Home</a>
+            <a target=”_blank” style="text-decoration: none;" href="https://www.chisholmmedicalcentre.com.au/index.php#contact">Contact</a>
+        </div>  
+        <div class="container__item">
+            <form onsubmit="return false" class="form">
+                <input id="userInput" onsubmit="return false" class="form__field"/>
+                <button onclick="getPrice()" type='button' class="btn btn--primary btn--inside uppercase">ask</button>
+            </form>
+        </div>
+        
+        <div class="container__item container__item--bottom">
+            <p id="answer" class="container">What would you like to know?</p>
+        </div>
+        <div>
+            <div>
+                <a target=”_blank” class="hotdoc-widget" style="text-decoration: none; color: white" href="https://www.hotdoc.com.au/medical-centres/chisholm-ACT-2905/chisholm-medical-centre/doctors">Book Appointment</a>
+            </div>       
+        </div>
+        <div class="copyright-container">
+            <p class="copyright">© Copyright Chisholm Medical Centre.</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
