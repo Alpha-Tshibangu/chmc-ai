@@ -1,6 +1,8 @@
-# Open Generative Question-Answering (QA) AI
-
 **Chisholm Medical Centre Artificial Intelligence Web Application**
+
+![logo](https://user-images.githubusercontent.com/107289998/203362314-7a5bae56-6b64-4438-86ce-0aebd281adf2.png)
+
+# Open Generative Question-Answering (QA) AI
 
 This web application can answer questions about the things associated with the Chisholm Medical Centre. On the backend, the QA model generates free text directly based on the context it's given. This is a variant of QA known as open generative QA. Click [here](https://huggingface.co/tasks/question-answering) to read more.
 
