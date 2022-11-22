@@ -1,0 +1,15 @@
+{
+  "name": "firebase-app",
+  "version": "1.0.0",
+  "description": "The Chisholm Medical Centre Artificial Intelligence Web Application",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alpha",
+  "license": "ISC",
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  }
+}

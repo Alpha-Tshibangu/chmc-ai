@@ -1,26 +1,33 @@
 :root {
   background: #f5f6fa;
   color: #9c9c9c;
-  font: 1rem "PT Sans", sans-serif; }
+  font: 1rem "PT Sans", sans-serif;
+}
 
 html,
 body,
 .container {
-  height: 99.5%; }
+  height: 98%;
+}
 
 a {
-  color: inherit; }
-  a:hover {
-    color: #16ABE3; }
+  color: inherit;
+  display: inline;
+}
+a:hover {
+  color: #16abe3;
+}
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .uppercase {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .btn {
   display: inline-block;
@@ -31,20 +38,25 @@ a {
   outline: 0;
   padding: 0;
   transition: all 200ms ease-in;
-  cursor: pointer; }
-  .btn--primary {
-    background: #16ABE3;
-    color: #fff;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    padding: 12px 36px; }
-    .btn--primary:hover {
-      background: #149dd0; }
-    .btn--primary:active {
-      background: #16ABE3;
-      box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2); }
-  .btn--inside {
-    margin-left: -96px; }
+  cursor: pointer;
+}
+.btn--primary {
+  background: #16abe3;
+  color: #fff;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 12px 36px;
+}
+.btn--primary:hover {
+  background: #149dd0;
+}
+.btn--primary:active {
+  background: #16abe3;
+  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+.btn--inside {
+  margin-left: -96px;
+}
 
 .form__field {
   width: 360px;
@@ -54,16 +66,17 @@ a {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border: 0;
   outline: 0;
-  padding: 22px 18px; }
+  padding: 22px 18px;
+}
 
 .copyright-container {
   position: relative;
   width: 100%;
-  top: 355px;
+  top: 38%;
 }
 
 .copyright {
-  text-align: center
+  text-align: center;
 }
 
 .hotdoc-widget {
@@ -78,7 +91,7 @@ a {
 
 .hotdoc-widget:hover {
   position: relative;
-  background-color: #16ABE3;
+  background-color: #16abe3;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
   color: white;
   top: 35px;
@@ -88,17 +101,31 @@ a {
 
 .links {
   position: sticky;
-  bottom: 875px;
+  bottom: 94%;
   border: 5px;
   height: 2%;
   width: 95%;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  left: 2.5%;
+  bottom: 30%;
+}
+
 .loader-container {
   width: 100%;
   position: absolute;
-  top: 475px;
-  text-align:center
+  top: 53.5%;
+  height: 18px;
+  text-align: center;
 }
 
 .lds-ellipsis {
@@ -106,8 +133,9 @@ a {
   position: relative;
   right: 35px;
   width: 8px;
-  height: 30px;
-  margin:auto;
+  height: 18px;
+  bottom: 19%;
+  margin: auto;
 }
 .lds-ellipsis div {
   position: absolute;
@@ -115,7 +143,7 @@ a {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #16ABE3;
+  background: #16abe3;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -156,5 +184,59 @@ a {
   }
   100% {
     transform: translate(24px, 0);
+  }
+}
+
+/* Logo fade */
+
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Chisholm Medical Centre AI</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="links">
+        <a
+          target="”_blank”"
+          style="text-decoration: none"
+          href="https://www.chisholmmedicalcentre.com.au/index.php"
+          >Home</a
+        >
+        <a
+          target="”_blank”"
+          style="text-decoration: none"
+          href="https://www.chisholmmedicalcentre.com.au/index.php#contact"
+          >Contact</a
+        >
+      </div>
+      <div class="logo-container fade-in">
+        <img
+          class="logo"
+          src="../assets/logo.png"
+          alt="Chisholm Medical Centre Logo"
+        />
+      </div>
+      <div class="container__item">
+        <form onsubmit="return false" class="form">
+          <input id="userInput" onsubmit="return false" class="form__field" />
+          <button
+            id="button"
+            onclick="getAnswer()"
+            type="button"
+            class="btn btn--primary btn--inside uppercase"
+          >
+            ask
+          </button>
+        </form>
+      </div>
+      <div class="text container__item container__item--bottom">
+        <p id="answer" class="container">
+          <span id="words">What would you like to know?</span>
+        </p>
+      </div>
+      <script type="text/javascript">
+        (function () {
+          var words = [
+              "What would you like to know?",
+              "I know everything about the Chisholm Medical Centre.",
+              "...well, almost everything.",
+              "You can ask me (almost) anything!",
+              "Book an appointment with the keyphrase 'Hey HotDoc'.",
+              `"Hey HotDoc, Book a standard appointment with Dr Eugene at 12pm next Wednesday."`,
+              "How much does an iron infusion cost?",
+              "What's new the physiotherapist's name?",
+              "When are you open?",
+              "Where is the Chisholm Medical Centre?",
+              "Are you bulk billed? Psst... The answer to this is mostly yes.",
+              "Do you have a female doctor?",
+            ],
+            i = 0;
+          setInterval(function () {
+            $("#words").fadeOut(function () {
+              $(this)
+                .html(words[(i = (i + 1) % words.length)])
+                .fadeIn();
+            });
+          }, 6000);
+        })();
+      </script>
+      <div>
+        <div id="hd-button-container">
+          <a
+            id="hd-button"
+            target="”_blank”"
+            class="hotdoc-widget"
+            style="text-decoration: none; color: white"
+            href="https://www.hotdoc.com.au/medical-centres/chisholm-ACT-2905/chisholm-medical-centre/doctors"
+            >Book Appointment</a
+          >
+        </div>
+      </div>
+      <div class="copyright-container">
+        <p class="copyright">© Copyright Chisholm Medical Centre.</p>
+      </div>
+    </div>
+    <script type="text/javascript" src="./index.mjs"></script>
+  </body>
+</html>
