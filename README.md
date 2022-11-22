@@ -8,7 +8,7 @@ This web application can answer questions about the things associated with the C
 
 ### Current Limitations:
 
-1. Appointments booked with "Hey HotDoc" keyword must include:
+1. Appointments booked with "Hey HotDoc" keyphrase must include:
 
    - Practitioner's first name
    - Appointment type (standard/long)
