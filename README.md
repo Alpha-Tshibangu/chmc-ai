@@ -10,15 +10,29 @@ This web application can answer questions about the things associated with the C
 
 1. Appointments booked with "Hey HotDoc" keyphrase must include:
 
-   - Practitioner's first name
+   - Practitioner's first name. Currently these are:
+     1. Eugene
+     2. Karim
+     3. Diaa
    - Appointment type (standard/long)
 
-   Appointment types are currently limited to standard and long appointments.
+   Appointment types are currently limited to standard, long, afterhours, and physiotherapy.
 
 ### Current Development Issues:
 
-1. CHMC Logo on index.html shifts left/right depending on screen-width.
+1. Firestore value error on requests.
 
-2. Uncaught SyntaxError: Cannot use import statement outside a module (at index.mjs:1:1)
+   - ValueError: A document must have an even number of path elements
 
-   - This reference error makes it difficult to use firebase/firestore in src/index.js (or mjs) which would otherwise allow data collection on user queries and server responses (as well as timestamps of course).
+   This value error pesists when requesting information a couple of times before it starts working. When it will error is still somewhat random but the suspicion is it does so because the code responsible for creating "documents" (database records)executes synchronously.
+
+2. "Hey HotDoc" keyphrase result dispays weirdly on the webpage.
+
+### Recommended Features:
+
+1. Voice activated requests and responses.
+
+- Potential Text-to-Speech models:
+  1. [Open AI Whisper](https://github.com/openai/whisper)
+  2. [NVIDIA FastPitch](https://huggingface.co/nvidia/tts_en_fastpitch)
+  3. [Meta FastSpeech 2](https://huggingface.co/facebook/fastspeech2-en-ljspeech)

@@ -5,6 +5,28 @@ from fastapi import FastAPI
 from transformers import pipeline
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+from firebase_admin import credentials
+from firebase_admin import firestore
+import firebase_admin
+from datetime import datetime
+import random
+
+cred = credentials.Certificate('./chmc-ai-369416-20a9bfad00fe.json')
+app = firebase_admin.initialize_app(cred)
+db = firestore.client()
+
+
+def docId():
+    lower = "abcdefghijklmnopqrstuvwxyz"
+    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    numbers = "0123456789"
+    symbols = "@#$&_-()=%*:/!?+."
+
+
+    string = lower + upper + numbers + symbols
+    length = 20
+    id = "".join(random.sample(string, length))
+    return id
 
 app = FastAPI()
 
@@ -36,6 +58,14 @@ def query(q:str):
     res = nlp(QA_input)
     model = AutoModelForQuestionAnswering.from_pretrained(model_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
+# Firebase ---
+    doc_ref = db.collection(u'user-queries').document(u"{}".format(docId()))
+    doc_ref.set({
+    u'query': u'{}'.format(q),
+    u'response': u'{}'.format(res["answer"]),
+    u'timestamp': u'{}'.format(datetime.now())
+    })
+
     return res
 
 @app.get("/hd")
@@ -130,6 +160,13 @@ def appointments(query):
     def url(whoFor, history, reason, doctor, when):
         url = f"https://www.hotdoc.com.au/medical-centres/book/appointment/authenticate?clinic=6848&doctor={doctor}&for={whoFor}&history={history}&reason={reason}&timezone=Australia%2FSydney&when={when}"
         return {"link": url, "doctor": drName(tok_query), "type": apptReason(tok_query)}
-    url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)
+# Firebase ---
+    doc_ref = db.collection(u'user-appointments').document(u"{}".format(docId()))
+    doc_ref.set({
+    u'query': u'{}'.format(query),
+    u'response': u'{}'.format(url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)),
+    u'appointment-time': u'{}'.format(adjustedDateTime),
+    u'timestamp': u'{}'.format(datetime.now())
+    })
 
     return url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)

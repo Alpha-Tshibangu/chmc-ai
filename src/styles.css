@@ -7,7 +7,7 @@
 html,
 body,
 .container {
-  height: 98%;
+  height: 95%;
 }
 
 a {
@@ -59,7 +59,7 @@ a:hover {
 }
 
 .form__field {
-  width: 360px;
+  width: 600px;
   background: #fff;
   color: #7a7a7a;
   font: inherit;
@@ -72,7 +72,7 @@ a:hover {
 .copyright-container {
   position: relative;
   width: 100%;
-  top: 38%;
+  top: 43%;
 }
 
 .copyright {
@@ -109,15 +109,17 @@ a:hover {
 
 .logo-container {
   display: flex;
+  position: static;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  padding: 25px;
+  padding-left: 70px;
 }
 
 .logo {
-  position: relative;
-  left: 2.5%;
-  bottom: 30%;
+  right: 14.5%;
+  bottom: 63%;
 }
 
 .loader-container {
