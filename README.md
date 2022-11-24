@@ -8,7 +8,7 @@ This web application can answer questions about the things associated with the C
 
 ## Open Generative Question-Answering
 
-My further ambitions for this web application include implementing an Open Generative QA. This would see the model generate free text directly based on context, and enable longer more natural responses.
+My further ambitions for this web application include implementing an Open Generative QA model. This would see the model generate free text directly based on context, and enable longer more natural responses.
 
 ### Current Limitations:
 
