@@ -2,9 +2,13 @@
 
 ![logo](https://user-images.githubusercontent.com/107289998/203362314-7a5bae56-6b64-4438-86ce-0aebd281adf2.png)
 
-## Open Generative Question-Answering (QA) AI
+## Extractive Question-Answering
 
-This web application can answer questions about the things associated with the Chisholm Medical Centre. On the backend, the QA model generates free text directly based on the context it's given. This is a variant of QA known as open generative QA. Click [here](https://huggingface.co/tasks/question-answering) to read more.
+This web application can answer questions about the things associated with the Chisholm Medical Centre. On the backend, the QA model exttracts the answer from the context it's given. This is a variant of QA known as Extractive Question Answering. Click [here](https://huggingface.co/tasks/question-answering) to read more.
+
+## Open Generative Question-Answering
+
+My further ambitions for this web application include implementing an Open Generative QA. This would see the model generate free text directly based on context, and enable longer more natural responses.
 
 ### Current Limitations:
 
@@ -18,6 +22,8 @@ This web application can answer questions about the things associated with the C
 
    Appointment types are currently limited to standard, long, afterhours, and physiotherapy.
 
+2. Not that suitable for mobile (small-medium) screen sizes.
+
 ### Current Development Issues:
 
 1. Firestore value error on requests.
@@ -27,6 +33,8 @@ This web application can answer questions about the things associated with the C
    This value error pesists when requesting information a couple of times before it starts working. When it will error is still somewhat random but the suspicion is it does so because the code responsible for creating "documents" (database records)executes synchronously.
 
 2. "Hey HotDoc" keyphrase result dispays weirdly on the webpage.
+
+3. Ngrok is used in this application to expose services running on the local host at certain ports to be exposed to remote public servers so that they can be accessed via the internet. Currently the website can be accessed via the domain "beta.chmc.live". This domain points to a tcp ngrok address (masked forwarding) which points to a local host port (5500) where the webpage is being run. At the moment, the issue resides where, when exposing the python backend running on port 8000 (w/ FastAPI) via ngrok remote server tunneling, the application is inaccessible via the domain address, but can be accessed via the tcp address which is what the cnamed domain "app.chmc.server" points to.
 
 ### Recommended Features:
 

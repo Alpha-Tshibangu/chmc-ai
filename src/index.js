@@ -5,7 +5,7 @@ function getAnswer() {
     let loader = `<div class="container"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>`;
     document.getElementById("answer").innerHTML = loader;
     const url =
-      "http://127.0.0.1:8000/hd?" +
+      "http://1.tcp.au.ngrok.io:26052/hd?" +
       new URLSearchParams({
         query: input.value,
       });
@@ -25,7 +25,7 @@ function getAnswer() {
     let loader = `<div class="container"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>`;
     document.getElementById("answer").innerHTML = loader;
     const url =
-      "http://127.0.0.1:8000/query?" +
+      "http://1.tcp.au.ngrok.io:26052/query?" +
       new URLSearchParams({
         q: input.value,
       });
@@ -37,11 +37,6 @@ function getAnswer() {
           data["answer"].slice(1)
         }.`;
         document.getElementById("answer").style.color = "#16ABE3";
-        const docRef = addDoc(collection(db, "user-queries"), {
-          query: input.value,
-          response: data["answer"],
-          time: timestamp,
-        });
       })
       .catch((error) => console.log(error));
   }
