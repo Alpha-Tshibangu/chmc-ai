@@ -14,7 +14,7 @@ This web application can answer questions about the things associated with the C
      1. Eugene
      2. Karim
      3. Diaa
-   - Appointment type (standard/long)
+   - Appointment type
 
    Appointment types are currently limited to standard, long, afterhours, and physiotherapy.
 
@@ -36,3 +36,5 @@ This web application can answer questions about the things associated with the C
   1. [Open AI Whisper](https://github.com/openai/whisper)
   2. [NVIDIA FastPitch](https://huggingface.co/nvidia/tts_en_fastpitch)
   3. [Meta FastSpeech 2](https://huggingface.co/facebook/fastspeech2-en-ljspeech)
+
+2. Javascript have a speech rec library that could also potentially be of use.
