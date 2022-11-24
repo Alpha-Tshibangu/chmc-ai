@@ -59,14 +59,15 @@ def query(q:str):
     model = AutoModelForQuestionAnswering.from_pretrained(model_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 # Firebase ---
-    doc_ref = db.collection(u'user-queries').document(u"{}".format(docId()))
-    doc_ref.set({
-    u'query': u'{}'.format(q),
-    u'response': u'{}'.format(res["answer"]),
-    u'timestamp': u'{}'.format(datetime.now())
-    })
-
-    return res
+    try:
+        doc_ref = db.collection(u'user-queries').document(u"{}".format(docId()))
+        doc_ref.set({
+        u'query': u'{}'.format(q),
+        u'response': u'{}'.format(res["answer"]),
+        u'timestamp': u'{}'.format(datetime.now())
+        })
+    finally:
+        return res
 
 @app.get("/hd")
 def appointments(query):
@@ -161,12 +162,13 @@ def appointments(query):
         url = f"https://www.hotdoc.com.au/medical-centres/book/appointment/authenticate?clinic=6848&doctor={doctor}&for={whoFor}&history={history}&reason={reason}&timezone=Australia%2FSydney&when={when}"
         return {"link": url, "doctor": drName(tok_query), "type": apptReason(tok_query)}
 # Firebase ---
-    doc_ref = db.collection(u'user-appointments').document(u"{}".format(docId()))
-    doc_ref.set({
-    u'query': u'{}'.format(query),
-    u'response': u'{}'.format(url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)),
-    u'appointment-time': u'{}'.format(adjustedDateTime),
-    u'timestamp': u'{}'.format(datetime.now())
-    })
-
-    return url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)
+    try:
+        doc_ref = db.collection(u'user-appointments').document(u"{}".format(docId()))
+        doc_ref.set({
+        u'query': u'{}'.format(query),
+        u'response': u'{}'.format(url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)),
+        u'appointment-time': u'{}'.format(adjustedDateTime),
+        u'timestamp': u'{}'.format(datetime.now())
+        })
+    finally:
+        return url(hd["for"], hd["history"], reasonFound, doctorNum, adjustedDateTime)

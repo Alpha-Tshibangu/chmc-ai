@@ -10,6 +10,34 @@
   </head>
   <body>
     <div class="container">
+      <div class="modal" id="modal">
+        <div class="modal__container">
+          <h1>Welcome to the CHMC-AI Closed Beta v1.0</h1>
+          <p>
+            Thank you for participating in the closed beta! I'm building an
+            Artificial Intelligence Web Application capable of simple
+            question-answering regarding the Chisholm Medical Centre, its
+            services, and its operations. Although it is quite simple, the
+            AI-model responsible for serving answers to user questions will
+            eventually be able to produce more open generative responses and
+            fewer extractive ones. Your participation will help me to collect
+            data on the web app's usage, including the scope of user enquiry. It
+            also allows me to measure key server performance metrics (since
+            right now, the web/app "server" is my little brother's GPU-equipped
+            laptop. Please review the "Docs" (top left) on GitHub to understand
+            more about this project and the development process.
+          </p>
+          <p>
+            Note: The web app is not suitable for smaller screen sizes (i.e.
+            mobile) at this point in development! You could use it on your
+            phone, but your experience will be interesting.
+          </p>
+
+          <div class="modal__buttons">
+            <button class="btn-secondary" id="modal-skip">Continue🤖</button>
+          </div>
+        </div>
+      </div>
       <div class="links">
         <a
           target="”_blank”"
@@ -32,7 +60,7 @@
           >Docs</a
         >
       </div>
-      <div class="logo-container fade-in">
+      <div id="logo-image" class="logo-container fade-in">
         <img
           class="logo"
           src="../assets/logo.png"
@@ -57,32 +85,6 @@
           <span id="words">What would you like to know?</span>
         </p>
       </div>
-      <script type="text/javascript">
-        (function () {
-          var words = [
-              "What would you like to know?",
-              "I know everything about the Chisholm Medical Centre.",
-              "...well, almost everything.",
-              "You can ask me (almost) anything!",
-              "Book an appointment with the keyphrase 'Hey HotDoc'.",
-              `"Hey HotDoc, Book a standard appointment with Dr Eugene at 12pm next Wednesday."`,
-              "How much does an iron infusion cost?",
-              "What's new the physiotherapist's name?",
-              "When are you open?",
-              "Where is the Chisholm Medical Centre?",
-              "Are you bulk billed? Psst... The answer to this is mostly yes.",
-              "Do you have a female doctor?",
-            ],
-            i = 0;
-          setInterval(function () {
-            $("#words").fadeOut(function () {
-              $(this)
-                .html(words[(i = (i + 1) % words.length)])
-                .fadeIn();
-            });
-          }, 6000);
-        })();
-      </script>
       <div>
         <div id="hd-button-container">
           <a

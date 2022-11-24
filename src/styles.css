@@ -189,56 +189,62 @@ a:hover {
   }
 }
 
-/* Logo fade */
+/* Modal Stuff */
 
-.fade-in {
-  animation: fadeIn ease 10s;
-  -webkit-animation: fadeIn ease 10s;
-  -moz-animation: fadeIn ease 10s;
-  -o-animation: fadeIn ease 10s;
-  -ms-animation: fadeIn ease 10s;
+body {
+  color: #2a324b;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: 250ms opacity ease-in;
 }
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.modal__container {
+  background-color: white;
+  width: 26rem;
+  padding: 1.5rem;
+  border-radius: 0.2rem;
 }
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.modal__container h1 {
+  text-align: center;
 }
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.modal__container p {
+  line-height: 1.5rem;
+  border-top: 1px solid #eef1f6;
+  padding: 1rem 0;
 }
-
-@-ms-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.modal__buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.modal-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+button {
+  font-family: inherit;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #16abe3;
+  border-radius: 0.2rem;
+}
+.btn-primary {
+  background-color: #16abe3;
+  color: white;
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #16abe3;
 }
