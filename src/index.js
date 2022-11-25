@@ -91,6 +91,5 @@ btnSkip.addEventListener("click", () => {
   setTimeout(() => {
     btn.style.visibility = "visible";
     fade();
-    txt.setAttribute("answer");
   }, 150);
 });
