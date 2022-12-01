@@ -8,7 +8,15 @@ This web application can answer questions about the things associated with the C
 
 ## Open Generative Question-Answering
 
-My further ambitions for this web application include implementing an Open Generative QA model. This would see the model generate free text directly based on context, and enable longer more natural responses.
+My further ambitions for this web application include implementing an Open Generative QA model. This would see the model generate free text directly based on context (This task is also known as Reading Comprehension), and enable longer more natural responses.
+
+## Knowledge Base (i.e. Context)
+
+The model derives it's answers from a provided context (which can be found in this repo). It's evident that the more structured the knowledge base, the better the model performs (high quality answers to questions). Work must be done to determine how the knowledge base can be best structured and develop a method where this can be done objectively. 
+
+1. Potential Models:
+   - [DrQA](https://github.com/facebookresearch/DrQA)
+     * DrQA is a system for reading comprehension applied to open-domain question answering.
 
 ### Current Limitations:
 
@@ -33,10 +41,6 @@ My further ambitions for this web application include implementing an Open Gener
    This value error persists when requesting information a couple of times before it starts working. When it will error is still somewhat random but the suspicion is it does so because the code responsible for creating "documents" (database records)executes synchronously.
 
    **The current working fix is to wrap the firebase code in a try-finally block. But, that's not really a fix.**
-
-2. "Hey HotDoc" key-phrase result displays weirdly on the webpage.
-
-3. Ngrok is used in this application to expose services running on the local host at certain ports to be exposed to remote public servers so that they can be accessed via the internet. Currently the website can be accessed via the domain "beta.chmc.live". This domain points to a tcp ngrok address (masked forwarding) which points to a local host port (5500) where the webpage is being run. At the moment, the issue resides where, when exposing the python backend running on port 8000 (w/ FastAPI) via ngrok remote server tunneling, the application is inaccessible via the domain address, but can be accessed via the tcp address which is what the cnamed domain "app.chmc.server" points to.
 
 ### Recommended Features:
 
