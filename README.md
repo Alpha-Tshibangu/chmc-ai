@@ -56,4 +56,4 @@ The model derives it's answers from a provided context (which can be found in th
 ### Version History
 
 _26/11/2022_
-Version: **Closed Beta Release Version 1**
+**Closed Beta Version 1**
