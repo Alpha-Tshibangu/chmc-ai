@@ -10,7 +10,7 @@ This web application can answer questions about the things associated with the C
 
 My further ambitions for this web application include implementing an Open Generative QA model. This would see the model generate free text directly based on context (This task is also known as Reading Comprehension), and enable longer more natural responses.
 
-## Knowledge Base (i.e. Context)
+## Knowledge Base (Context)
 
 The model derives it's answers from a provided context (which can be found in this repo). It's evident that the more structured the knowledge base, the better the model performs (high quality answers to questions). Work must be done to determine how the knowledge base can be best structured and develop a method where this can be done objectively. 
 
